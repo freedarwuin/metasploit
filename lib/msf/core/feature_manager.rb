@@ -27,6 +27,7 @@ module Msf
     MYSQL_SESSION_TYPE = 'mysql_session_type'
     MSSQL_SESSION_TYPE = 'mssql_session_type'
     LDAP_SESSION_TYPE = 'ldap_session_type'
+    DISPLAY_MODULE_ACTION = 'display_module_action'
 
     DEFAULTS = [
       {
@@ -116,6 +117,13 @@ module Msf
         requires_restart: false,
         default_value: true,
         developer_notes: 'Enabled in Metasploit 6.4.x'
+      }.freeze,
+      {
+        name: DISPLAY_MODULE_ACTION,
+        description: 'When enabled after using a module the current action and number of actions will be displayed',
+        requires_restart: false,
+        default_value: true,
+        developer_notes: 'Added as a feature so users can turn it off if they wish to reduce clutter in their terminal'
       }.freeze
     ].freeze
 
